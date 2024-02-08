@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button defaultHref="/electrician"></ion-back-button>
+    
+    <ion-title>ebook</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card >
+  <ion-list >
+      <form [formGroup]=" elect1Form" (ngSubmit)="onSubmit()">
+<h4 id="add"> Elect Details</h4>
+    <ion-item>
+      <img [src]="elect.imgurl || '' ">
+
+      <ion-label>Electrician Name</ion-label>
+        <h3>{{ elect.name }}</h3>
+        <b>{{elect.workers}}</b>
+        <ion-label color="primary">
+          <b>{{ elect.salary | currency:'INR' }}</b>
+          
+        </ion-label>
+      </ion-item>
+      </form>
+   
+  </ion-list>
+</ion-card>
+  
+
+<ion-card>
+  <ion-list lines="full">
+    <form [formGroup]=" elect1Form" (ngSubmit)="onSubmit()">
+<ion-row>
+  <ion-col>
+    <ion-button type="submit" color="secondary" expand="block" routerLink="/patient-details">Book Now</ion-button>
+  </ion-col>
+</ion-row>
+</form>
+</ion-list>
+
+</ion-card>
+
+</ion-content>

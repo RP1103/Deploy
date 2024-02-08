@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/tab1" ></ion-back-button>
+      <ion-title><ion-icon name="bulb-outline"></ion-icon>EveryDay Lights</ion-title>
+    </ion-buttons>
+    <ion-button id="cart" color="danger" size="medium" slot="end" (click)="openCart()">
+      {{ cartItemCount | async }}
+      <ion-icon name="cart" slot="end"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+   
+  <ion-card *ngFor="let p of lights" >
+
+    <ion-card-header id="img"><img [src]="p.imgurl || '' "></ion-card-header>
+
+    <ion-card-subtitle>
+      <ion-card-title id="name">{{ p.name }}</ion-card-title>
+    </ion-card-subtitle>
+
+    <ion-card-content>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="8">
+          <ion-label color="dark" id="price">
+            <b>{{ p.price | currency:'₹' }}</b>
+          </ion-label>
+        </ion-col>
+
+        <ion-col size="12" class="ion-text-right">
+          <ion-button color="danger" (click)="addToCart(p)"> Add To Cart
+            <ion-icon name="cart"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-item>
+          <ion-select placeholder="Select Wts">
+            <ion-select-option value="apples">5W</ion-select-option>
+            <ion-select-option value="oranges">7W</ion-select-option>
+            <ion-select-option value="bananas">12W</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-row>
+    </ion-card-content>
+  </ion-card> 
+  
+  
+  
+
+</ion-content>
+

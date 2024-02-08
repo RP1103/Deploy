@@ -1,0 +1,86 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar class="tool" >
+    
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="tool">
+
+  
+
+  <div class="ion-text-center" >
+    <ion-text class="venk" color="primary">
+    <h2><b>Pasta</b></h2>
+  </ion-text>
+  </div>
+
+  <p align="center"> <img  src="../assets/pastaa.jpg" alt>
+  
+
+  <ion-col size="12" size-xs="12"	sixe-sm="6"	size-md="4"	size-lg="4">	
+    <ion-card class="venk" align="left" >	
+    <ion-card-header>	
+    
+    <ion-card-title>
+      <ion-subtitle>Lines for Pasta</ion-subtitle>
+      <section>    
+        <ul class="my-nav">
+          <ion-text class="tool">
+          <li> Pasta is a food made from flour, starch and water.
+            It is usually cooked in hot water before being eaten.</li><br>
+          <li>Pasta has been very popular in Italy and has also been eaten in many parts of Asia for a long time.</li><br>
+          <li> It is also the national dish of Italy, invented in 1986</li></ion-text>
+        </ul>
+      </section>
+  
+      
+    </ion-card-title>	
+    </ion-card-header>	
+    </ion-card>	
+    </ion-col>	
+
+    <br><br>
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button color="primary" (click)="openCart()" #cart>
+        <div class="cart-length">{{ cartItemCount | async }}</div>
+        <ion-icon name="cart" class="cart-icon"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <div class="form-group" align="center">
+      <input
+        type="text"
+        class="box"
+        placeholder="Search..."
+        [(ngModel)]="filterTerm"
+      />
+    </div>
+    
+    <p align="center">
+  
+      <ion-card *ngFor="let p of pastas" class="venk">
+          
+        <ion-card-header>
+          <ion-card-title>{{ p.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-subtitle><img [src]="p.imgurl || '' "></ion-card-subtitle>
+        
+        <ion-card-content>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="8">
+              <ion-label color="primary">
+                <b>{{ p.price | currency:'INR' }}</b>
+              </ion-label>
+            </ion-col>
+        
+            <ion-col size="12" class="ion-text-right">
+              <ion-button  (click)="addToCart(p)"> Add To Cart
+                <ion-icon name="add"></ion-icon>
+              </ion-button>
+            </ion-col>
+
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      </p>
+
+</ion-content>

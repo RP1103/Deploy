@@ -1,0 +1,36 @@
+/* Add this CSS to your styles.css or home.page.scss file */
+
+/* Style for form input cells within the same table layout */
+ion-grid {
+  margin-top: 20px; /* Adjust margin to provide some spacing between the form and the table */
+}
+
+/* Style for form input cells */
+ion-item {
+  margin-bottom: 6px; /* Reduce margin for a more compact layout */
+}
+
+ion-label {
+  font-size: 14px; /* Reduce font size for labels */
+}
+
+ion-input,
+ion-textarea {
+  font-size: 14px; /* Reduce font size for input fields */
+}
+
+/* Style for grid cells in the displayed entries */
+ion-row {
+  border: 1px solid #ccc;
+}
+
+ion-col {
+  padding: 8px; /* Reduce padding for more compact cells */
+  text-align: center;
+  border-right: 1px solid #ccc;
+}
+
+/* Remove right border for the last column in each row */
+ion-row ion-col:last-child {
+  border-right: none;
+}

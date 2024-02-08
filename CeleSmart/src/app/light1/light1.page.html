@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar class="toolbar" color="danger" >
+    <ion-buttons>
+      <ion-back-button defaultHref="/light"></ion-back-button>
+    <ion-title><ion-icon name="bulb-outline"></ion-icon>Solar</ion-title>
+  </ion-buttons>
+    <ion-button id="cart" color="danger" size="medium" slot="end" (click)="openCart()">
+      {{ cartItemCount | async }}
+      <ion-icon name="cart" slot="end"></ion-icon>
+    </ion-button>
+
+
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+  <ion-card *ngFor="let light1 of lights1" >
+    <ion-card-header id="img"><img [src]="light1.imgurl || '' "></ion-card-header>
+    <ion-card-subtitle>
+      <p>{{light1.name}}</p>
+      <p>{{light1.qty}}</p>
+    </ion-card-subtitle>
+
+      <ion-row class="ion-align-items-center">
+        <ion-col size="8">
+          <ion-label color="dark" id="price">
+            <b>{{ light1.price | currency:'₹' }}</b>
+          </ion-label>
+        </ion-col>
+        <ion-col size="12" class="ion-text-right">
+          <ion-button color="danger" (click)="addToCart(light1)"> Add To Cart
+            <ion-icon name="cart"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+  </ion-card>
+
+</ion-content>
+

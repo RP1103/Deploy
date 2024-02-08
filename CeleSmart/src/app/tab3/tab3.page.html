@@ -1,0 +1,81 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar class="tool" >
+    
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="tool">
+  
+
+  <div class="ion-text-center" >
+    <ion-text class="venk" color="primary">
+    <h2><b>Breads and Mixes</b></h2>
+  </ion-text>
+  </div>
+
+  <ion-col size="12" size-xs="12"	sixe-sm="6"	size-md="4"	size-lg="4">	
+    <ion-card class="tool" >	
+    <ion-card-header>	
+    
+    <ion-card-title>
+      <ion-subtitle>Benefits</ion-subtitle>
+      <section>    
+        <ul class="my-nav">
+          <ion-text class="subav">
+          <li> Bread is a diet food made from flour(wheat,Fine white flour) and water with low yeast.</li><br>
+          <li>Instant rice mixes are made using organic way without any chemicals and Artificial Taste and Colors</li><br>
+          </ion-text>
+        </ul>
+      </section>
+  
+      
+    </ion-card-title>	
+    </ion-card-header>	
+    </ion-card>	
+    </ion-col>	
+    
+ 
+
+    
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="openCart()" #cart>
+      <div class="cart-length">{{ cartItemCount | async }}</div>
+      <ion-icon name="cart" class="cart-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="form-group" align="center">
+    <input
+      type="text"
+      class="box"
+      placeholder="Search..."
+      [(ngModel)]="filterTerm"
+    />
+  </div>
+  
+  <p align="center">
+  
+    <ion-card *ngFor="let p of others" class="tool">
+     
+      <ion-card-header>
+        <ion-card-title>{{p.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-subtitle><img [src]="p.imgurl || '' "></ion-card-subtitle>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-label color="secondary">
+              <b>{{ p.price | currency: 'INR' }}</b>
+            </ion-label>
+          </ion-col>
+          <ion-col size="4" class="ion-text-right">
+            <ion-button color="primary" size="small" (click)="addToCart(p)">
+              ADD TO CART
+              <ion-icon name="cart" slot="end"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  
+
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Checkout
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let item of cart">
+    <ion-item>
+      {{ item.carving.name }} - ₹{{ item.carving.price }} - Quantity: {{ item.quantity }}
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label>Total Price: ₹{{ getTotalPrice() }}</ion-label>
+  </ion-item>
+
+  <!-- Add form elements for user details and payment -->
+
+  <ion-button (click)="confirmPurchase()" expand="full">Confirm Purchase</ion-button>
+</ion-content>

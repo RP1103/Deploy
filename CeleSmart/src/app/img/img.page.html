@@ -1,0 +1,41 @@
+<!-- img.page.html -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Add New Design
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label><input type="file" (change)="onFileSelected($event)" /></ion-label>
+    
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input [(ngModel)]="formData.name" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Price</ion-label>
+    <ion-input [(ngModel)]="formData.price" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Quantity</ion-label>
+    <ion-input [(ngModel)]="formData.qty" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Size</ion-label>
+    <ion-input [(ngModel)]="formData.size" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="uploadSelectedImage()">Upload Image</ion-button>
+
+  <div *ngIf="uploadError" class="error-message">
+    {{ uploadError.message }}
+  </div>
+</ion-content>

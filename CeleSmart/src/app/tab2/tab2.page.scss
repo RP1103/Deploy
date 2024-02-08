@@ -1,0 +1,71 @@
+.tool{
+  --background:lavender;
+  font-family:Times New Roman !important;
+  font-size:1.1em;
+}
+
+.box {
+  font-size: 25px;
+  border-color: rgba(63, 63, 227, 0.79);
+  border-radius: 10px;
+}
+.my-nav {
+  list-style-type: disc;
+}
+
+.venk{
+  font-family:Times New Roman !important;
+    font-size:1.1em;
+  background-color: lavender!important;
+  color:#380dd6c7;
+}
+
+ion-fab-button {
+  height: 70px;
+  width: 70px;
+}
+
+.cart-icon {
+  font-size: 50px;
+}
+
+.cart-length {
+  color: var(--ion-color-primary);
+  position: absolute;
+  top: 18px;
+  left: 25px;
+  font-weight: 600;
+  font-size: 1em;
+  min-width: 25px;
+  z-index: 10;
+}
+#img{
+  height: 280px;
+  width:300px ;
+  margin-left: 20px;
+}
+#cart{
+  --background: rgba(236, 56, 203, 0.315);
+ }
+#price{
+  font-size: large;
+  margin-left: 10px;
+}
+#name{
+  color:  rgb(25, 138, 34);
+  margin-left: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#button{
+  --background: rgb(25, 138, 34);
+  margin-right: 30px;
+}
+
+#title{
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#back{
+  color: white;
+}
+

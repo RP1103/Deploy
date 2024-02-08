@@ -1,0 +1,34 @@
+<!-- expenses.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Carving Expenses
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Carving Expenses Form -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Expenses</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Board Expenses</ion-label>
+        <ion-input [(ngModel)]="carving.boardExpenses" name="boardExpenses" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Labor Expenses</ion-label>
+        <ion-input [(ngModel)]="carving.laborExpenses" name="laborExpenses" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Food Expenses</ion-label>
+        <ion-input [(ngModel)]="carving.foodExpenses" name="foodExpenses" type="number"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button (click)="createCarving()" *ngIf="isFormValid()">Create Carving</ion-button>
+</ion-content>

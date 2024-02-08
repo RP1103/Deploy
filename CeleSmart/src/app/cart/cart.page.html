@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Shopping Cart
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let item of cart; let i = index">
+    <ion-item>
+      {{ item.carving.name }} - ₹{{ item.carving.price }} - Quantity: {{ item.quantity }}
+      <ion-button (click)="removeItem(i)" slot="end" fill="clear" color="danger">Remove</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label>Total Price: ₹{{ getTotalPrice() }}</ion-label>
+  </ion-item>
+
+  <ion-button (click)="clearCart()" expand="full">Clear Cart</ion-button>
+  <ion-button (click)="checkout()" expand="full">Proceed to Checkout</ion-button>
+</ion-content>

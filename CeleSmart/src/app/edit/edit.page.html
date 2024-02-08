@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Update Data
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="products.length > 0">
+    <ion-list>
+      <ion-item *ngFor="let product of products">
+        
+        <ion-thumbnail slot="start" *ngIf="product.image && product.image.data">
+          <ion-img [src]="getImageSource(product.image)" alt="Product Image"></ion-img>
+        </ion-thumbnail>
+
+        
+        <!-- <ion-label>
+          <h2>{{ product.name }}</h2>
+          <p>Price: {{ product.price }}</p>
+          <p>Quantity: {{ product.qty }}</p>
+          <p>Size: {{ product.size }}</p>
+        </ion-label> -->
+        <ion-button (click)="editItem(product)">
+          <ion-icon slot="start" name="create"></ion-icon>
+        </ion-button>
+        <div *ngIf="editedProduct?.isEditing">
+          <form (submit)="updateProduct(editedProduct)"><ion-label>Name :
+            <ion-input [(ngModel)]="editedProduct.name" name="name" placeholder="Product Name"></ion-input></ion-label>
+            <ion-label>Price  :
+              <ion-input [(ngModel)]="editedProduct.price" name="price" type="number" placeholder="Price"></ion-input></ion-label>
+            <ion-label>Quantity :
+            <ion-input [(ngModel)]="editedProduct.qty" name="qty" type="number" placeholder="Quantity"></ion-input></ion-label>
+            <ion-label>Size :
+                          <ion-input [(ngModel)]="editedProduct.size" name="size" placeholder="Size"></ion-input></ion-label>
+
+            
+            <!-- Image selection input -->
+            <input type="file" (change)="onImageSelected($event)" accept="image/*">
+        
+            <ion-button type="submit">Update</ion-button>
+          </form>
+        </div>
+        
+        
+              </ion-item>
+            </ion-list>
+          </div>
+        
+          <div *ngIf="products.length === 0">
+            No products available.
+          </div>
+        </ion-content>
+        

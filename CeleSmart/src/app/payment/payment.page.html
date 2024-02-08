@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/tab1" color="danger"></ion-back-button>
+    <ion-title>UPI</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="../assets/pay.jpg " alt>
+  <ion-col size="12" class="ion-text-right">
+  <ion-button (click)="upi()" color="primary">
+    Pay Now
+  </ion-button>
+  <a href="upi://pay?pa=vipvenkatesh453@okaxis&tn=for order&cu=INR" id="__UPI_BUTTON__" style="background: #ff912f;border: 2px solid #8a4100;padding: 10px;text-decoration: none;color: white;font-size: larger;border-radius: 10px;">Pay via UPI</a>
+</ion-col>
+</ion-content>

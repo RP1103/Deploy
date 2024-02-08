@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>vendor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p align="center">
+    <ion-card *ngFor="let p of carvings" class="venk">
+      <ion-card-header>
+        <ion-card-title>{{ p.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-subtitle><img [src]="p.imgurl || '' "></ion-card-subtitle>
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="8">
+            <ion-label>
+              <b>Size:  {{p.size}}</b><br>
+              <b>Price:  {{ p.price | currency:'INR' }}</b>
+            </ion-label>
+          </ion-col>
+
+          <ion-col size="12" class="ion-text-right" >
+            <ion-button  color="success" (click)="add"> Add New design 
+              <ion-icon name="add"></ion-icon>
+            </ion-button>
+          </ion-col>
+
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </p>
+
+  <!-- Add new button and form -->
+  <ion-list lines="full">
+    <form [formGroup]="cForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Image url</ion-label>
+        <ion-input formControlName="imgurl" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Qty</ion-label>
+        <ion-input formControlName="qty" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Price</ion-label>
+        <ion-input formControlName="price" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Size</ion-label>
+        <ion-input formControlName="size" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="danger" expand="block">Add</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>

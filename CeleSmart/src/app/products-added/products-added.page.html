@@ -1,0 +1,39 @@
+<!-- products-added.page.html -->
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="navigateBack()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Added Products
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let product of addedProducts; let i = index">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="getImageSource(product.image)" alt="Product Image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.name }}</h2>
+        <p>Size: {{ product.size }}</p>
+        <p>Price: {{ product.price | currency: 'INR' }}</p>
+        <p>Quantity: {{ product.quantity }}</p>
+      </ion-label>
+      <ion-button fill="clear" color="danger" (click)="removeProduct(i)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label>Total Amount:</ion-label>
+    <ion-note slot="end">{{ totalAmount | currency: 'INR' }}</ion-note>
+  </ion-item>
+
+  <ion-button expand="full" color="primary" (click)="confirmOrder()">
+    Confirm Order
+  </ion-button>
+</ion-content>

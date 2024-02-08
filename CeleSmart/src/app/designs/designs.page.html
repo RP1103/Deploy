@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar class="tool">
+    <ion-title>All Designs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+<!-- 
+      <div class="form-group" align="center">
+        <input
+          type="text"
+          class="box"
+          placeholder="Search..."
+          [(ngModel)]="filterTerm"
+        />
+      </div>
+       -->
+      <p align="center">
+    
+        <ion-card *ngFor="let p of carvings" class="venk">
+          <ion-card-header>
+            <ion-card-title>{{ p.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-subtitle><img [src]="p.imgurl || '' "></ion-card-subtitle>
+          
+          <ion-card-content>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="8">
+                <ion-label>
+                  <b>{{ p.size }}</b><br>
+                  <b>{{ p.qty }}</b><br>
+                  <b>{{ p.price | currency: 'INR' }}</b>
+                </ion-label>
+              </ion-col>
+              
+              <ion-col size="3" class="ion-text-right">
+                <ion-button color="primary" (click)="editCarving(p)">
+                  <ion-icon name="create"></ion-icon>
+                </ion-button>
+
+                <ion-button color="danger" (click)="deleteCarving(p)">
+                  <ion-icon name="trash"></ion-icon>
+                </ion-button>
+              </ion-col>
+        
+
+
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+
+
+        </p>
+  
+  
+  
+</ion-content>

@@ -1,0 +1,117 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Work Log
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Enter and Display Entries
+    </ion-card-header>
+
+    <ion-select placeholder="Select Name" [(ngModel)]="selectedName" (ionChange)="filterEntries()">
+      <ion-select-option *ngFor="let entry of worklogData" [value]="entry.name">{{ entry.name }}</ion-select-option>
+    </ion-select> 
+
+    <ion-select placeholder="Select Name" [(ngModel)]="selectedName" (ionChange)="filterEntries()">
+      <ion-select-option *ngFor="let name of uniqueNames" [value]="name">{{ name }}</ion-select-option>
+    </ion-select>
+    
+
+    <ion-card-content>
+      <table class="bordered-table">
+        <thead>
+          <tr class="d1">
+            <th>Date</th>
+            <th>Name</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>Total Hours</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of filteredWorklogData">
+            <td>{{ entry.date }}</td>
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.checkIn }}</td>
+            <td>{{ entry.checkOut }}</td>
+            <td>{{ entry.totalHours }}</td>
+            <td>{{ entry.description }}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <p>Total Working Hours: {{ totalWorkingHours }}</p>
+        <p>Calculated Salary: {{ calculatedSalary | currency: 'INR' }}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Work Log
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Enter and Display Entries
+    </ion-card-header>
+
+    <!-- Name-based selection -->
+    <ion-select placeholder="Select Name" [(ngModel)]="selectedName" (ionChange)="filterEntries()">
+      <ion-select-option *ngFor="let name of uniqueNames" [value]="name">{{ name }}</ion-select-option>
+    </ion-select>
+
+    <!-- Month-based selection -->
+    <ion-select placeholder="Select Month" [(ngModel)]="selectedMonth" (ionChange)="filterEntries()">
+      <ion-select-option *ngFor="let month of uniqueMonths" [value]="month">{{ month }}</ion-select-option>
+    </ion-select>
+
+    <!-- Pagination controls -->
+     <ion-buttons>
+      <ion-button (click)="prevPage()" [disabled]="currentPage === 1">Previous</ion-button>
+      <ion-button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</ion-button>
+    </ion-buttons> 
+
+    <ion-card-content>
+      <table class="bordered-table">
+        <thead>
+          <tr class="d1">
+            <th>Date</th>
+            <th>Name</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>Total Hours</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of filteredWorklogData">
+            <td>{{ entry.date }}</td>
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.checkIn }}</td>
+            <td>{{ entry.checkOut }}</td>
+            <td>{{ entry.totalHours }}</td>
+            <td>{{ entry.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <p>Total Working Hours: {{ totalWorkingHours }}</p>
+        <p>Calculated Salary: {{ calculatedSalary | currency: 'INR' }}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

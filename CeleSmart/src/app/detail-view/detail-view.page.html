@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/rental-update"></ion-back-button>
+    <ion-title>Detail View Page</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>Rental Details Page</p>
+  <ion-card>
+    <label for="check" class="togButton">Rental Contract</label>
+    <input type="checkbox" class="togCheck" id="check"/>
+    <div class="togContent">
+    <ion-item *ngFor="let entryform of entryforms">
+    <ion-label>
+      <h2>{{entryform.line1}} <b>{{entryform.Date}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line2}} <b>{{entryform.tenantname}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line3}} <b>{{entryform.tenantaddress}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line4}} <b>{{entryform.tenantphone}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line5}} <b>{{entryform.rentalunitowner}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line6}} <b>{{entryform.rentalunitaddress}}</b></h2>
+      <h2></h2>
+    </ion-label>
+  </ion-item>
+</div><br>
+      <label for="check1" class="togButton">Rental for September</label>
+      <input type="checkbox" class="togCheck" id="check1"/>
+      <div class="togContent">
+        <ion-item *ngFor="let entryform of entryforms">
+          <ion-label>
+      <h2>{{entryform.line7}} <b>{{entryform.rent}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line8}} <b>{{entryform.deposit}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line9}} <b>{{entryform.contractstartdate}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line10}} <b>{{entryform.contractperiod}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line11}} <b>{{entryform.electricity}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line12}} <b>{{entryform.water}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line13}} <b>{{entryform.internet}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line14}} <b>{{entryform.other}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line15}} <b>{{entryform.noticeperiod}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line16}} <b>{{entryform.petspolicy}}</b></h2>
+      <h2></h2>
+      <h2>{{entryform.line17}} <b>{{entryform.checklist}}</b></h2>
+      <h2></h2>
+
+    </ion-label>
+
+    </ion-item>
+      </div>
+  </ion-card>
+
+</ion-content>

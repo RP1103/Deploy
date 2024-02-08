@@ -1,0 +1,35 @@
+*{
+    font-family:lato;
+}
+ion-content{
+    --ion-background-color:lavender;
+    }
+ 
+
+.menu-header-bg{
+    height:180px;
+    width:350px;
+    background-color:rgba(84, 67, 234, 0.295);
+    background: linear-gradient(90deg,#3945ef59 0%,#3945ef4f 100%);
+    box-shadow:0px 1px 10px rgba(42, 45, 243, 0.233);
+    transform:rotate(-15deg);
+    border-radius:10px 10px 10px 50px;
+    margin-left:-18px;
+    margin-top:-50px;
+    margin-bottom:60px;
+}
+.header-content{
+    position: absolute;
+    top:30px;
+    left:15px;
+    display:flex;
+    align-items:center;
+
+
+img{
+    width: 80px;
+    height:80px;
+    border-radius:50%;
+    border:7px solid rgba(180, 224, 193, 0.5)
+    }
+}

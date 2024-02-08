@@ -1,0 +1,101 @@
+.tool{
+  --background:lavender;
+  font-family:Times New Roman !important;
+  font-size:1.1em;
+}
+
+ion-content{
+  --background:lavender;
+}
+
+label{
+    display: inline-block;
+    margin-top: 15px;
+    color: #E03B8B;
+    text-decoration: underline;
+    cursor:pointer;
+    font-weight: 600; 
+  }
+  .content{
+    display: none;
+    transition: 0.5s linear;
+  }
+  #check:checked ~ .content{
+    display: block;
+  }
+  #check1:checked ~ .content{
+    display: block;
+  }
+  #check2:checked ~ .content{
+    display: block;
+  }
+  #check:checked ~ label{
+    visibility: hidden;
+  }
+  #check1:checked ~ label{
+    visibility: hidden;
+  }
+  #check2:checked ~ label{
+    visibility: hidden;
+  }
+  #check:checked ~ label:after{
+    content:'Read Less';
+    display: block;
+    visibility: visible;
+  }
+  #check1:checked ~ label:after{
+    content:'Read Less';
+    display: block;
+    visibility: visible;
+  }
+  #check2:checked ~ label:after{
+    content:'Read Less';
+    display: block;
+    visibility: visible;
+  }
+   
+  
+  
+  
+  .tool{
+    --background:lavender;
+  }
+  
+  .suba {
+  
+      width: 80%;
+  }
+  
+  .suba{
+      font-family:Times New Roman !important;
+      font-size:1.1em;
+    }
+  
+    .subav{
+      font-family:Times New Roman !important;
+      font-size:1.1em;
+    }
+  .venk{
+    font-family:Times New Roman !important;
+    background-color: lavender!important;
+    height:100%;
+  }
+  .venki{
+    font-family:Times New Roman!important;
+    background-color: lavender!important;
+  }
+  
+  
+  
+  
+   
+  
+  
+   
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,60 @@
+<ion-header [translucent]="true" class="tool">
+  <ion-toolbar color="primary">
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs"></ion-back-button>
+    </ion-buttons> -->
+    <ion-title>
+      My Orders
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="tool">
+  <div *ngIf="orders.length > 0; else noOrders">
+    <ion-list>
+      <ion-card *ngFor="let order of orders; let orderIndex = index" class="order-card">
+        <ion-card-header>
+          <h3>Order {{ orderIndex + 1 }} - ID: {{ order._id }}</h3>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let product of order.products; let productIndex = index" class="product-item">
+              <ion-thumbnail slot="start" *ngIf="product.image && product.image.data">
+                <ion-img [src]="getImageSource(product.image)" alt="Product Image"></ion-img>
+              </ion-thumbnail>
+              <ion-label>
+                <h4>Product {{ productIndex + 1 }} - {{ product.name }}</h4>
+                <ul>
+                  <li>Quantity: {{ product.quantity }}</li>
+                  <li>Price: {{ product.price }}</li>
+                </ul>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+          <p>Total Amount: {{ order.totalAmount }}</p>
+          <ion-button slot="end" (click)="markOrderComplete(order)">Complete</ion-button>
+
+      
+      
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <!-- Display counts -->
+    <div class="counts">
+      <p>Total Orders: {{ orders.length }}</p>
+      <ng-container *ngFor="let product of uniqueProducts">
+        <p>{{ product.name }} Orders: {{ countProductOrders(product) }}</p>
+      </ng-container>
+    </div>
+  
+  </div>
+
+  <ng-template #noOrders>
+    <ion-card class="no-orders-card">
+      <ion-card-content>
+        <p>No orders available.</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>

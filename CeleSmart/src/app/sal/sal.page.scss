@@ -1,0 +1,57 @@
+// /* Add this CSS at the end of your existing styles or in a separate file */
+
+// /* Mobile view styles */
+// @media only screen and (max-width: 600px) {
+//   ion-card-content {
+//     overflow-x: auto;
+//   }
+
+//   table {
+//     width: 100%;
+//     border-collapse: collapse;
+//     margin-top: 10px;
+//   }
+
+//   th, td {
+//     padding: 5px; /* Adjust the padding for a more compact layout */
+//     text-align: left;
+//     font-size: 12px; /* Adjust the font size for better readability on small screens */
+//   }
+
+//   th {
+//     background-color: #f2f2f2;
+//   }
+
+//   ion-input {
+//     width: 100%;
+//     font-size: 12px; /* Adjust the font size for better readability on small screens */
+//   }
+
+//   p {
+//     margin-bottom: 4px; /* Adjust the margin for a more compact layout */
+//     font-size: 12px; /* Adjust the font size for better readability on small screens */
+//   }
+// }
+/* sal.page.scss */
+
+/* Style for bordered table */
+.bordered-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bordered-table th,
+.bordered-table td {
+  border: 1px solid #000; /* Border style */
+  padding: 8px; /* Padding inside cells */
+}
+
+/* Style for table header */
+.bordered-table th {
+  background-color: #f2f2f2; /* Background color for header */
+}
+
+/* Style for alternating row colors */
+.d1 tr:nth-child(even) {
+  background-color: #f2f2f2; /* Alternate row background color */
+}

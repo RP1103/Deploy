@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary" class="tool">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start">
+        <img alt="logo" id="header_logo" height="50" float-left src="assets/udhayaaa.png">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text><b>All Designs</b></ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="products.length > 0">
+    <ion-list>
+      <ion-item *ngFor="let product of products">
+        
+        <ion-thumbnail slot="start">
+          <ion-img [src]="getImageSource(product.image)" alt="Product Image"></ion-img>
+        </ion-thumbnail>
+        
+        <ion-label>
+          <h2>{{ product.name }}</h2>
+          <p>Price: {{ product.price }}</p>
+          <p>Quantity: {{ product.qty }}</p>
+          <p>Size: {{ product.size }}</p>
+        </ion-label>
+
+        <ion-button (click)="editItem(product)">
+          <ion-icon slot="start" name="create"></ion-icon>
+        </ion-button>
+
+        <ion-button color="danger" (click)="deleteItem(product._id)">
+          <ion-icon slot="start" name="trash"></ion-icon>
+        </ion-button>  
+
+        <!-- Edit form -->
+        <div *ngIf="editedProduct && editedProduct._id === product._id">
+          <form (submit)="updateProduct(editedProduct)">
+            <ion-input [(ngModel)]="editedProduct.name" name="name" placeholder="Product Name"></ion-input>
+            <ion-input [(ngModel)]="editedProduct.price" name="price" type="number" placeholder="Price"></ion-input>
+            <ion-input [(ngModel)]="editedProduct.qty" name="qty" type="number" placeholder="Quantity"></ion-input>
+            <ion-input [(ngModel)]="editedProduct.size" name="size" placeholder="Size"></ion-input>
+            
+            <input type="file" (change)="onImageSelected($event)" accept="image/*">
+            
+
+            <ion-button type="submit">Update</ion-button>
+          </form>
+        </div>
+
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="products.length === 0">
+    No products available.
+  </div>
+</ion-content>

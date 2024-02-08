@@ -1,0 +1,67 @@
+<ion-content class="tool">
+  <div *ngIf="orders.length > 0; else noOrders">
+    <ion-list>
+      <ion-item *ngFor="let order of orders; let orderIndex = index" class="order-item">
+        <ion-card>
+          <ion-card-header>
+            <h4>Order {{ orderIndex + 1 }} - ID: {{ order._id }}</h4>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Display product information -->
+            <ion-list>
+              <ion-item *ngFor="let product of order.products; let productIndex = index" class="product-item">
+                <ion-label>
+                  <h4>Product {{ productIndex + 1 }} - {{ product.name }}</h4>
+                  <ul class="star-list">
+                    <li>Quantity: {{ product.quantity }}</li>
+                    <li>Price: {{ product.price }}</li>
+                  </ul>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+
+            <ul class="star-list">
+              <li>Total Amount: {{ order.totalAmount }}</li>
+              <hr>
+              <li *ngIf="carvings.length > 0; else noCarvings">
+                <ng-container *ngFor="let carving of carvings; let carvingIndex = index">
+                  <ion-item class="carving-item" *ngIf="carving.boardExpenses || carving.laborExpenses || carving.foodExpenses">
+                    <ion-label>
+                      <ul class="star-list">
+                        <li *ngIf="carving.boardExpenses">Board Expenses: {{ carving.boardExpenses }}</li>
+                        <li *ngIf="carving.laborExpenses">Labor Expenses: {{ carving.laborExpenses }}</li>
+                        <li *ngIf="carving.foodExpenses">Food Expenses: {{ carving.foodExpenses }}</li>
+                        <li *ngIf="carving.boardExpenses || carving.laborExpenses || carving.foodExpenses">                      
+                          Expenses: {{ carving.boardExpenses + carving.laborExpenses + carving.foodExpenses }}
+                        </li>
+                        <h2>Total Expenses: {{ (carving.boardExpenses + carving.laborExpenses + carving.foodExpenses) * calculateTotalQuantity(order.products) }}</h2>
+                        <hr>
+                        <h2>Profit : {{ order.totalAmount - (carving.boardExpenses + carving.laborExpenses + carving.foodExpenses) * calculateTotalQuantity(order.products) }}</h2>
+                      </ul>
+                    </ion-label>
+                  </ion-item>
+                </ng-container>
+              </li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ng-template #noOrders>
+    <ion-card class="no-orders-card">
+      <ion-card-content>
+        <p>No orders available.</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+  <ng-template #noCarvings>
+    <ion-card class="no-carvings-card">
+      <ion-card-content>
+        <p>No carving expenses available.</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>

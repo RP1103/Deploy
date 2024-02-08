@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary" class="tool">   <ion-buttons slot="start">
+    <ion-menu-button menu="start"><img alt="logo" id="header_logo" height="50" float-left src="assets/udhayaaa.png"></ion-menu-button>
+  </ion-buttons>
+    <ion-title>
+         <ion-text ><b>Wood Carving</b></ion-text>
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="tool">
+  <div *ngIf="successfulOrders.length > 0; else noOrders">
+    <ion-list>
+      <ion-item *ngFor="let order of successfulOrders; let orderIndex = index" class="order-item">
+        <ion-card>
+          <ion-card-header>
+            <h3>Order {{ orderIndex + 1 }} - ID: {{ order._id }}</h3>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let product of order.products; let productIndex = index" class="product-item">
+                <ion-thumbnail slot="start" *ngIf="product.image && product.image.data">
+                  <ion-img [src]="getImageSource(product.image)" alt="Product Image"></ion-img>
+                </ion-thumbnail>
+                <ion-label>
+                  <h4>Product {{ productIndex + 1 }} - {{ product.name }}</h4>
+                  <ul>
+                    <li>Quantity: {{ product.quantity }}</li>
+                    <li>Price: {{ product.price }}</li>
+                  </ul>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+            <p>Total Amount: {{ order.totalAmount }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ng-template #noOrders>
+    <ion-card class="no-orders-card">
+      <ion-card-content>
+        <p>No successful orders available.</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>

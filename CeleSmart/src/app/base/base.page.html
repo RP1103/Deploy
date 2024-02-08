@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>base</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let d of data"><b>Name:{{d.name}}</b></div>
+
+  <ion-list >
+    <ion-card *ngFor="let d of data" >
+      
+      <ion-card-header>
+        <ion-card-title>Name:{{ d.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="8">
+            <ion-label color="primary">
+              <b>Price:{{ d.price}}</b>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

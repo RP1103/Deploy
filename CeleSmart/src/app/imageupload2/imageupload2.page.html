@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Time Sheet App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-input [(ngModel)]="dateValue" placeholder="Enter date" type="date"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Check In</ion-label>
+          <ion-input [(ngModel)]="checkInValue" placeholder="Enter check-in time" type="time"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Check Out</ion-label>
+          <ion-input [(ngModel)]="checkOutValue" placeholder="Enter check-out time" type="time"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Total Hours</ion-label>
+          <ion-input [(ngModel)]="totalHoursValue" placeholder="Enter total hours"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Description</ion-label>
+          <ion-textarea [(ngModel)]="descriptionValue" placeholder="Enter description"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+  <ion-button expand="full" (click)="addWorklogEntry()">Add Entry</ion-button>
+
+  <ion-searchbar (ionInput)="getWorklogEntriesByName($event.detail.value)"></ion-searchbar>
+
+  <ion-grid *ngIf="entries && entries.length > 0">
+    <ion-row>
+      <ion-col>Date</ion-col>
+      <ion-col>Name</ion-col>
+      <ion-col>Check In</ion-col>
+      <ion-col>Check Out</ion-col>
+      <ion-col>Total Hours</ion-col>
+      <ion-col>Description</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let entry of entries">
+      <ion-col>{{ entry.date }}</ion-col>
+      <ion-col>{{ entry.name }}</ion-col>
+      <ion-col>{{ entry.checkIn }}</ion-col>
+      <ion-col>{{ entry.checkOut }}</ion-col>
+      <ion-col>{{ entry.totalHours }}</ion-col>
+      <ion-col>{{ entry.description }}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

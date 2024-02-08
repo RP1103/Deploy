@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    <ion-title>Entry Form</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bc">
+
+
+  <h1>Rental Entry Form</h1>
+  <ion-list >
+
+    <form [formGroup]="entryform" (ngSubmit)="onSubmit()">
+      <label for="check" class="togButton">Rental Contract</label>
+    <input type="checkbox" class="togCheck" id="check"/>
+    <div class="togContent">
+        <ion-label position="floating">Date:</ion-label><br>
+        <ion-input formControlName="Date" type="date" required></ion-input>
+
+        <ion-label position="floating">RentalUnitOwner:</ion-label><br>
+        <ion-input formControlName="rentalunitowner" type="text" required></ion-input>
+
+
+
+        <ion-label position="floating">Rental Unit Address:</ion-label><br>
+        <ion-input formControlName="rentalunitaddress" type="text" required>
+        </ion-input>
+
+        <ion-label position="floating">Tenant Name:</ion-label><br>
+        <ion-input formControlName="tenantname" type="text" required>
+        </ion-input>
+
+
+        <ion-label position="floating">Tenant Address:</ion-label><br>
+        <ion-input formControlName="tenantaddress" type="text" required>
+        </ion-input>
+        <ion-label position="floating">Tenant Phone(Whatsapp):</ion-label><br>
+        <ion-input formControlName="tenantphone" type="text" required>
+        </ion-input>
+      </div>
+      <br>
+
+      <label for="check1" class="togButton">Rental for September</label>
+      <input type="checkbox" class="togCheck" id="check1"/>
+        <div class="togContent">
+
+        <ion-label position="floating">Rent:</ion-label><br>
+        <ion-input formControlName="rent" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Deposit:</ion-label><br>
+        <ion-input formControlName="deposit" type="text" required>
+        </ion-input>
+
+
+         <ion-label position="floating">Contract Start Date:</ion-label><br>
+        <ion-input formControlName="contractstartdate" type="date" required>
+        </ion-input>
+         <ion-label position="floating">Contract Period:</ion-label><br>
+        <ion-input formControlName="contractperiod" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Electricity:</ion-label><br>
+        <ion-input formControlName="electricity" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Water:</ion-label><br>
+        <ion-input formControlName="water" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Internet:</ion-label><br>
+        <ion-input formControlName="internet" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Other:</ion-label><br>
+        <ion-input formControlName="other" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Notice Period:</ion-label><br>
+        <ion-input formControlName="noticeperiod" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Pets Policy:</ion-label><br>
+        <ion-input formControlName="petspolicy" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Checklist:</ion-label><br>
+        <ion-input formControlName="checklist" type="text" required>
+        </ion-input>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" color="success" expand="block">Save</ion-button>
+          </ion-col>
+        </ion-row>
+       </div><br>
+
+
+      <label for="check2" class="togButton">Rental for October</label>
+      <input type="checkbox" class="togCheck" id="check2"/>
+        <div class="togContent">
+
+        <ion-label position="floating">Rent:</ion-label><br>
+        <ion-input formControlName="rent" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Deposit:</ion-label><br>
+        <ion-input formControlName="deposit" type="text" required>
+        </ion-input>
+
+
+         <ion-label position="floating">Contract Start Date:</ion-label><br>
+        <ion-input formControlName="contractstartdate" type="date" required>
+        </ion-input>
+         <ion-label position="floating">Contract Period:</ion-label><br>
+        <ion-input formControlName="contractperiod" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Electricity:</ion-label><br>
+        <ion-input formControlName="electricity" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Water:</ion-label><br>
+        <ion-input formControlName="water" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Internet:</ion-label><br>
+        <ion-input formControlName="internet" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Other:</ion-label><br>
+        <ion-input formControlName="other" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Notice Period:</ion-label><br>
+        <ion-input formControlName="noticeperiod" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Pets Policy:</ion-label><br>
+        <ion-input formControlName="petspolicy" type="text" required>
+        </ion-input>
+         <ion-label position="floating">Checklist:</ion-label><br>
+        <ion-input formControlName="checklist" type="text" required>
+        </ion-input>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" color="success" expand="block">Save</ion-button>
+          </ion-col>
+        </ion-row>
+       </div>
+
+
+    </form>
+  </ion-list>
+  <ion-button href="{{url}}" color="success" id="contact">
+    <ion-icon name="logo-whatsapp"></ion-icon>
+    <p>Contact Us</p>
+  </ion-button>
+
+</ion-content>

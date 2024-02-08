@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Track Your Delivery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Enter Tracking Number</ion-label>
+    <ion-input [(ngModel)]="trackingNumber"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="full" (click)="trackDelivery()">Track</ion-button>
+
+  <ion-list *ngIf="deliverySteps && deliverySteps.length">
+    <ion-item *ngFor="let step of deliverySteps">
+      <ion-label>
+        <h2>{{ step.status }}</h2>
+        <p>{{ step.description }}</p>
+        <small>{{ step.timestamp | date: 'medium' }}</small>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

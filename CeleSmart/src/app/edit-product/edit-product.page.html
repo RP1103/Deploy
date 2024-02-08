@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Edit Product: {{ product.name }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Display product details and form fields for editing -->
+  
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input [(ngModel)]="product.name" type="text"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Price</ion-label>
+    <ion-input [(ngModel)]="product.price" type="text"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Quantity</ion-label>
+    <ion-input [(ngModel)]="product.qty" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Size</ion-label>
+    <ion-input [(ngModel)]="product.size" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="updateProduct()">Update Product</ion-button>
+  
+  <!-- Add other form fields and buttons as needed -->
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/rentalentryform"></ion-back-button>
+    <ion-title>Rental List</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>Rental Details Page</p>
+  <ion-card>
+    <label for="check" class="togButton">Rental Contract</label>
+    <input type="checkbox" class="togCheck" id="check"/>
+    <div class="togContent">
+    <ion-item *ngFor="let entryform of entryforms">
+    <ion-label>
+      <h2> My name is <b>{{entryform.tenantname}}</b></h2>
+      <h2> My address is <b>{{entryform.tenantaddress}}</b></h2>
+      <h2> My contact number is <b>{{entryform.tenantphone}}</b></h2>
+      <h2> Date is <b>{{entryform.Date}}</b></h2>
+      <h2> My name is <b>{{entryform.rentalunitowner}}</b></h2>
+      <h2> My address is <b>{{entryform.rentalunitaddress}}</b></h2>
+    </ion-label>
+  </ion-item>
+</div><br>
+<label for="check1" class="togButton">Rental for September</label>
+<input type="checkbox" class="togCheck" id="check1"/>
+<div class="togContent">
+  <ion-item *ngFor="let entryform of entryforms">
+    <ion-label>
+      <h2> My rent is <b>{{entryform.rent}}</b></h2>
+      <h2> My deposit is <b>{{entryform.deposit}}</b></h2>
+      <h2> My Contract Date is <b>{{entryform.contractstartdate}}</b></h2>
+      <h2> My Contract Period is <b>{{entryform.contractperiod}}</b></h2>
+      <h2> My electricity is <b>{{entryform.electricity}}</b></h2>
+      <h2> My Water is <b>{{entryform.water}}</b></h2>
+      <h2> My internet is <b>{{entryform.internet}}</b></h2>
+      <h2> My others is <b>{{entryform.other}}</b></h2>
+      <h2> My noticeperiod is <b>{{entryform.noticeperiod}}</b></h2>
+      <h2> My petspolicy is <b>{{entryform.petspolicy}}</b></h2>
+      <h2> My checklist is <b>{{entryform.checklist}}</b></h2>
+
+      </ion-label>
+    </ion-item>
+  </div>
+
+</ion-card>
+</ion-content>

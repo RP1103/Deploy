@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Order Tracking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- <ion-card class="order-status-card">
+    <ion-card-header>
+      <ion-card-title>Status: In Transit</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>Order ID:</ion-label>
+          <ion-text>12345</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Estimated Delivery:</ion-label>
+          <ion-text>January 15, 2023</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Current Location:</ion-label>
+          <ion-text>Warehouse A</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Shipping Carrier:</ion-label>
+          <ion-text>FedEx</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-card class="tracking-stages-card">
+    <ion-card-header>
+      <ion-card-title>Tracking Stages</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="tracking-stages-content">
+      <ion-list>
+        <ion-item *ngFor="let stage of trackingStages" class="tracking-stage">
+          <ion-label class="stage-title">{{ stage.title }}</ion-label>
+          <ion-text class="stage-status">{{ stage.status }}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="tracking-history-card">
+    <ion-card-header>
+      <ion-card-title>Tracking History</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="tracking-history-content">
+      <ion-list>
+        <ion-item *ngFor="let event of trackingEvents" class="tracking-event">
+          <ion-label class="event-date">{{ event.date | date: 'MMM d, h:mm a' }}</ion-label>
+          <ion-text class="event-status">{{ event.status }}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

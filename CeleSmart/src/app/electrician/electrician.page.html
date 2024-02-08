@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Electrician</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+   
+  <ion-list >
+    <ion-card *ngFor="let elect of elects" class="venk">
+      <img [src]="elect.imgurl || '' ">
+
+      <ion-card-header>
+        <ion-card-title>{{ elect.name }}</ion-card-title>
+        <b>{{elect.workers}}</b>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="8">
+            <ion-label color="primary">
+              <b>{{ elect.salary | currency:'INR' }}</b>
+              
+            </ion-label>
+          </ion-col>
+          <ion-button Href="ebook">book Now</ion-button>
+      
+           
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
+
+
+ 

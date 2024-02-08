@@ -1,0 +1,27 @@
+<!-- allorders.page.html -->
+<ion-content class="tool">
+  <div *ngIf="orders.length > 0; else noOrders">
+    <ion-list>
+      <ion-item *ngFor="let order of orders; let orderIndex = index" class="order-item">
+        <ion-label>
+          <h3>Order {{ orderIndex + 1 }} - ID: {{ order._id }}</h3>
+          <p>Total Amount: ₹{{ order.totalAmount.toFixed(2) }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div class="counts">
+      <p>Total Transactions: {{ orders.length }}</p>
+      <p>Total Amount of All Orders: ₹{{ totalAmount.toFixed(2) }}</p>
+
+    </div>
+  </div>
+
+  <ng-template #noOrders>
+    <ion-card class="no-orders-card">
+      <ion-card-content>
+        <p>No orders available.</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>
