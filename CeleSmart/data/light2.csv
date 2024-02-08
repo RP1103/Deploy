@@ -1,0 +1,7 @@
+__v,_id,imgurl,name,price,qty
+0,62d4f3056f223aa1edd87f0c,./assets/wh.jpg,Eveready water heater,10000,10
+0,62d527336f223aa1edd87f18,./assets/tlwh.jpg,Tankless water heater,5000,5 litr
+0,62d527f66f223aa1edd87f19,./assets/swh.jpg,Solar water heater,11000,40 litr
+0,62d4f3056f223aa1edd87f0d,./assets/mix.jpg,"""eveready mixer""",6500,30
+0,62d527336f223aa1edd87f21,./assets/pt.jpg,Eveready popup Toaster,11000,30
+0,62d527f66f223aa1edd87f26,./assets/edib.jpg,Eveready iron box,3000,10

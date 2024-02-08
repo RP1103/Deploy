@@ -1,0 +1,8 @@
+{
+  "name": "CeleSmart",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

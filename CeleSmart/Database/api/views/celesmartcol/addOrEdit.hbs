@@ -1,0 +1,49 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/celesmartcol" method="POST" autocomplete="off">
+
+    <input type="hidden" name="_id" value="{{celesmartcol._id}}">
+
+    <div class="form-group">
+
+        <label>Name</label>
+
+        <input type="text" class="form-control" name="Name" placeholder="Name" value="{{celesmartcol.Name}}">
+
+    </div>
+
+    <div class="form-group">
+         <label>Kgs</label>
+
+        <input type="text" class="form-control" name="Kgs" placeholder="Kgs" value="{{celesmartcol.Kgs}}">
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+
+            <label>Qty</label>
+
+            <input type="text" class="form-control" name="Qty" placeholder="Qty" value="{{celesmartcol.Qty}}">
+
+        </div>
+
+        <div class="form-group col-md-6">
+
+            <label>Price</label>
+            <input type="text" class="form-control" name="Price" placeholder="Price" value="{{celesmartcol.Price}}">
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <button type="submit" class="btn btn-info">Submit</button>
+
+        <a class="btn btn-secondary" href="/celesmartcol/list">View All</a>
+
+    </div>
+
+</form>
