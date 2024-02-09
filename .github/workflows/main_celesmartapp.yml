@@ -66,7 +66,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'CeleSmart'
+          app-name: 'celesmartapp'
           slot-name: 'Production'
           package: /home/runner/work/Deploy/Deploy
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F66EC7A5AA8D44D1A0770A880AA43E86 }}
